@@ -2,7 +2,6 @@ package com.hoang.msu.counter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
@@ -28,17 +27,18 @@ class MainActivity : AppCompatActivity() {
 
 
         tapButton = findViewById(R.id.tap_button)
-        display = findViewById(R.id.textView)
+        display = findViewById(R.id.countView)
 
-        tapButton.setOnClickListener{view : View ->
+        tapButton.setOnClickListener{
             count.addCount()
             display.text = count.getCount().toString()
+            /*
             Toast.makeText(
                 this,
                 R.string.tap_button,
-                Toast.LENGTH_SHORT)
-
-                .show()
+                Toast.LENGTH_SHORT
+            ).show()
+            */
         }
     }
 
