@@ -2,8 +2,7 @@ package com.hoang.msu.counter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.TextView
+import com.hoang.msu.counter.databinding.ActivityMainBinding
 
 
 class Counter{
@@ -17,20 +16,18 @@ class Counter{
     }
 }
 class MainActivity : AppCompatActivity() {
-    private lateinit var tapButton : Button
-    private lateinit var display : TextView
+    private lateinit var binding : ActivityMainBinding
     private var count : Counter = Counter()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        tapButton = findViewById(R.id.tap_button)
-        display = findViewById(R.id.countView)
-
-        tapButton.setOnClickListener{
+        binding.tapButton.setOnClickListener {
             count.addCount()
-            display.text = count.getCount().toString()
+            binding.countView.text = count.getCount().toString()
         }
     }
 
