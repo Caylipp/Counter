@@ -2,4 +2,5 @@
     <string name="app_name">Counter</string>
     <string name="tap_button">Incremented</string>
     <string name="tap">Tap</string>
+    <string name="_0">0</string>
 </resources>
